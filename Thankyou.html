@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://cdn.tinymce.com/4/tinymce.min.js">
+</script>
+ <script 
+src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+</script>
+<script>
+  tinymce.init({
+  selector: "#newtextarea"
+});
+</script>
+</head>
+<body>
+<h2>Send Thank you email using TinyMCE WYSIWYG editor and Angularjs</h2>
+
+<div ng-app="">
+<form method="post" name="newForm" action="">
+Enter email address:
+<input type="email" name="emailAddress" ng-model="text">
+<!-- Validate email address using Angularjs-->
+<span ng-show="newForm.emailAddress.$error.email">
+<h4 style="color:red;">Invalid email address</h4></span>
+<!--Use TinyMCE for WYSIWYG editor-->
+<textarea id="newtextarea"> Enter thank you note here..</textarea>
+<input type="submit" value="Send Thankyou email"/>
+</form>
+</div>
+</body>
+</html>
